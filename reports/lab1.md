@@ -1,0 +1,8 @@
+### lab1
+
+完善系统调用sys_task_info(),包括运行状态task_status,调用次数syscall_times和调用时长time。
+
+对于调用次数syscall_times,在TCB中添加一个长为MAX_SYSCALL_NUM的数组进行计数，首先要在TaskManager中实现increase_current_syscall_count(syscall_id)，加入syscall()函数中记录每个任务调用次数。
+
+对于调用时长time，在TCB中添加一个task_time记录在任务开始时的时间，在sys_task_info()中将当前时间与task_time相减即可获得运行时间。
+
